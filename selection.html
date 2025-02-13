@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Valentine’s Gift</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>What do you want for Valentine's? 💝</h1>
+
+        <div class="options">
+            <button class="gift-btn" data-choice="food">
+                <img src="https://th.bing.com/th/id/R.49af597ca10fceb7a1dfc8bcc6bc1026?rik=obkHWA26wpjaDw&riu=http%3a%2f%2fwww.fastfoodmenunutrition.com%2fwp-content%2fuploads%2f2015%2f03%2ffast-food.jpg&ehk=evPCWS01vOQotS5umzT4m4yZtp5yCtOnA6L8zfUa0L4%3d&risl=&pid=ImgRaw&r=0" alt="Food" class="gift-img">
+                Food 🍽️🍖
+            </button>
+
+            <button class="gift-btn" data-choice="flowers">
+                <img src="https://pyxis.nymag.com/v1/imgs/431/405/f532d2de344840c6a151bc3a073a56af51-flowers.rsquare.w1200.jpg" alt="Flowers" class="gift-img">
+                Flowers 🧸🌹
+            </button>
+
+            <button class="gift-btn" data-choice="me">
+                <img src="https://www.wheninmanila.com/wp-content/uploads/2020/01/dingdong-dantes.png" alt="Me" class="gift-img">
+                Me 🍆💦
+            </button>
+        </div>
+
+        <p id="confirmation" style="display: none; font-size: 18px; font-weight: bold; color: #d63384; margin-top: 20px;">
+            So you chose me huh 🍆💦
+        </p>
+    </div>
+
+    <script>
+        document.querySelectorAll(".gift-btn").forEach(button => {
+            button.addEventListener("click", () => {
+                // Disable all buttons
+                document.querySelectorAll(".gift-btn").forEach(btn => btn.disabled = true);
+
+                // Force the selection to "Me 🍆💦"
+                document.querySelector('.gift-btn[data-choice="me"]').click();
+
+                // Show confirmation message
+                document.getElementById("confirmation").style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>
